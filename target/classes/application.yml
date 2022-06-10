@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: blog-post-service
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://localhost:3306/blog_posts
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: true
+      show-sql: true
+      generate-ddl: true
+    sql:
+      init:
+        mode: always
+server:
+  port: 8080
