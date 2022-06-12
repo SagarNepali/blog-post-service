@@ -38,4 +38,14 @@ public class PostRestController {
     public void delete(@PathVariable Long id) throws PostNotFoundException,UserNotFoundException {
         postService.delete(id);
     }
+
+    @GetMapping("/{id}")
+    public Post getById(@PathVariable("id") Long id) throws PostNotFoundException {
+        return postService.getById(id);
+    }
+
+    @GetMapping("/users/{userId}")
+    public List<Post> getAllPostsOfAUser(@PathVariable("userId") Long id){
+        return postService.getAllPostsByUserId(id);
+    }
 }
