@@ -48,4 +48,10 @@ public class PostRestController {
     public List<Post> getAllPostsOfAUser(@PathVariable("userId") Long id){
         return postService.getAllPostsByUserId(id);
     }
+
+    @DeleteMapping("/users/{userId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteAllPostsOfAUser(@PathVariable("userId") Long id){
+        postService.deleteAllPostsByUserId(id);
+    }
 }

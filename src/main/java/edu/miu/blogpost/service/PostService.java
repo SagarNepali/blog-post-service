@@ -54,4 +54,7 @@ public class PostService {
         return postDAO.findAllByUserId(id);
     }
 
+    public void deleteAllPostsByUserId(Long id) {
+        postDAO.deleteAllByUserId(id);
+    }
 }
