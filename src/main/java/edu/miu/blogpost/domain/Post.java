@@ -23,9 +23,9 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+    @NotBlank(message = "Post cannot be blank")
     private String content;
-    @NotNull
+    @NotNull(message = "User must not be null")
     @JsonProperty("user_id")
     private Long userId;
     @Column(name="post_date")
